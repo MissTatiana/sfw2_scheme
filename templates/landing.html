@@ -1,0 +1,121 @@
+<div>
+	<script type="text/template" id="top-template">
+		<div id="top">
+			<img class="logo" src="images/shcemeLogo.png" width="125" height="124"/> <!-- 500/4 496/4 -->
+					
+					<a href="#" id="set"><img src="images/symbols/settings.png" id="settings"
+										 onmouseover="this.src='images/symbols/settingsDown.png'" 
+										 onmousedown="this.src='images/symbols/settingsDown.png'"
+										 onmouseout="this.src='images/symbols/settings.png'" width="62.5" height="57.5"></a> <!-- 500/8 460/8 -->
+					<a href="#"><img class="power" src="images/symbols/power.png" id="loginPower" 
+												onmouseover="this.src='images/symbols/powerDown.png'" 
+												onmousedown="this.src='images/symbols/powerDown.png'" 
+												onmouseout="this.src='images/symbols/power.png'" width="57" height="62.9"></a> <!-- 570/10 629/10 -->
+		</div><!-- top -->
+	</script><!-- top-template -->
+
+	<script type="text/template" id="welcome-template">
+		<div id="welcome">
+			<div class="content">
+				<div id="login">
+					<h4>Login</h4>
+						
+					<fieldset>
+						<div>
+							<label for="uNameLogin">Username:</label>
+							<input type="text" id="uNameLogin" name="uNameLogin" />
+						</div>
+						
+						<div>
+							<label for="passLogin">Password:</label>
+							<input type="password" id="passLogin" name="passLogin" />
+						</div>
+							
+						<a href="forgot.html" id="logPass">forgot password</a>
+						
+						<a href="#"><button id="loginBtn" class="btn">Login</button></a>
+							
+					</fieldset>
+				</div><!-- login -->
+					
+				<h4>Steampunk Task Manager</h4>
+					
+				<img src="images/displays.jpg" alt="display of Scheme interface"/>
+					
+				<div id="signUp">
+					<div id="suHeading">
+						<h4>Sign up</h4>
+					
+						<h2>(its free!)</h2>
+					</div> <!-- suHeading -->
+						
+					<fieldset>
+						<div id="names">
+							<div id="first">
+								<label for="firstname">First name:</label>
+								<input type="text" id="firstname" name="firstname" tabindex="1" />
+							</div><!-- first -->
+							
+							<div id="last">
+								<label for="lastname">Last name:</label>
+								<input type="text" id="lastname" name="lastname" tabindex="2" />
+							</div><!-- last -->
+						</div> <!-- names -->
+						
+						<div class="bigger">
+							<label for="email">Email address:</label>
+							<input type="email" id="email" name="email" tabindex="3" />
+						</div>
+							
+						<div class="bigger">
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username" tabindex="4" />
+						</div>
+							
+						<div id="pass">
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password" tabindex="5" />
+						</div><!-- pass -->
+						
+						<div id="conf">
+							<label for="passwordCon">Confirm password:</label>
+							<input type="password" id="passwordCon" name="passwordCon" tabindex="6" />
+						</div><!-- conf -->
+							
+						<a href="#"><button id="register" class="btn">Sign up</button></a>
+					</fieldset>
+				</div><!-- signUp -->
+					
+				<div id="features">
+					<h2>Features</h2>
+					<ul>
+						<li>Add, edit, delete tasks and projects</li>
+						<li>Month by month calendar view</li>
+						<li>Drag and drop list interface</li>
+						<li>Color coded</li>
+						<li>Easy to use and simple to understand</li>
+					</ul>
+				</div><!-- features -->
+					
+				<div id="why">
+					<h2>Why Scheme?</h2>
+					
+					<div id="talk">
+						<p id="floatP">
+							In today's busy lify-style, you need more then just your mind to remember everything that you have to do. 
+							You could simply write everything down, but Scheme allows you to acess your tasks and projects from anywhere.
+							The benifits are numerous and of no cost to you.
+						</p>
+							
+						<p>
+							Scheme is easy to use, and allows you to manage your schedule more efficiently. Never miss a deadline again, of
+							forget tasks that need to be done. Plus it's <b>free!</b>
+						</p>
+					</div><!-- talk -->
+					
+				</div><!-- why -->
+			</div><!-- content -->
+		</div><!-- welcome -->
+	</script><!-- welcome-template -->
+
+</div>

@@ -1,0 +1,398 @@
+/*	=	=	=	=	=	=	=	=	= counter-reset: =	=	=	=	=	=	*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+ *COLORS*
+ * tan - 888461
+ * dark sage - 45483f
+ * red - 522627
+ * dark red - 2a1319
+ * sand - 6c5a32
+ * dark sand - 4e411e
+ * grey - 44403f
+ * green - 11c160
+ * blue - 0b1933 - 102440
+ */
+
+/*	=	=	=	=	=	=	=	=	Regular Style	=	=	=	=	=	=	=	=	*/
+
+body{
+	text-align: center;
+	background: url(../images/background.jpg);
+	font-size: 62.5%
+}
+
+.wrap{
+	width: 960px; 
+	margin: 0 auto;
+	text-align: left;
+	background: rgba(68, 64, 63, 0.6)
+}
+
+hr{
+	height: 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, .9);
+	width: 900px;
+}
+
+h4{
+	font-size: 3.500em; /*35px*/
+	color: #522627;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-weight: bold;
+	text-shadow:
+    	-1px -1px 0 #000,
+    	1px -1px 0 #000,
+    	-1px 1px 0 #000,
+    	1px 1px 0 #000; 
+   	letter-spacing: 1px;
+   	margin: 5px 0 10px 0;
+}
+
+h2{
+	font-size: 3.000em; /*30px*/
+	color: #111c16;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	margin: 5px 0 10px 0;
+	padding-top: 10px;
+}
+
+p, li, label {
+	font-size: 2.000em; /*20px*/
+	color: #111c16;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	display: block;
+	text-decoration: none;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	color: #c1c0c0;
+	font-size: 2.000em;
+	padding: 5px 8px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	border: 2px solid #000;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	background: #6b3b3c; /* Old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b3b3c), color-stop(100%,#28161b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #6b3b3c 0%,#28161b 100%); /* Chrome10+,Safari5.1+ */
+	background: -moz-linear-gradient(top,  #6b3b3c 0%, #28161b 100%); /* FF3.6+ */
+	background: -o-linear-gradient(top,  #6b3b3c 0%,#28161b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #6b3b3c 0%,#28161b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #6b3b3c 0%,#28161b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b3b3c', endColorstr='#28161b',GradientType=0 ); /* IE6-9 */
+}
+
+.btn:hover {
+	background: #2a1319; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2a1319 0%, #2a1319 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a1319), color-stop(100%,#2a1319)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2a1319 0%,#2a1319 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2a1319 0%,#2a1319 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2a1319 0%,#2a1319 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2a1319 0%,#2a1319 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a1319', endColorstr='#2a1319',GradientType=0 ); /* IE6-9 */
+}
+
+.btn:active {
+	text-decoration: none;
+}
+
+
+/*	=	=	=	=	DIV TOP	=	=	=	=	*/
+
+#top {
+	padding: 10px 10px 50px 10px;
+}
+
+#top img {
+	padding-right: 5px;
+}
+
+.logo {
+	float: left;
+	clear: left;
+	margin-right: 650px;
+}
+
+#set {
+	visibility: hidden;
+}
+
+/*	=	=	=	=	LOGIN	=	=	=	=	*/
+
+#login {
+	position: absolute;
+	display: none;
+	background-color: #45483f;
+	width: 300px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-left: 325px;
+	text-align: center;
+}
+
+#login label {
+	text-align: left;
+	display: block;
+	margin: 5px 0 5px 50px;
+}
+
+#login input {
+	width: 200px;
+	margin-bottom: 5px;
+}
+
+#logPass {
+	text-decoration: none;
+	font-size: 2.000em;
+	color: #0b1933;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	border-bottom: 1px solid #0b1933;
+	margin-right: 80px;
+}
+
+#logPass:hover {
+	color: #111c16;
+}
+
+#login button {
+	margin: 20px 0 20px 180px;
+}
+
+
+/*	=	=	=	=	LOGOUT	=	=	=	=	*/
+
+#logout {
+	position: absolute;
+	display: none;
+	background-color: #45483f;
+	width: 500px;
+	height: 200px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-left: 250px;
+	text-align: center;
+}
+
+#logout h4 {
+	margin-top: 50px;
+}
+
+#logoutButtons {
+	margin: 10px 0 20px 130px;
+}
+
+#cancel {
+	width: 150px;
+	float: left;
+	clear: left;
+}
+
+/*	=	=	=	=	=	=	=	CONTENT	=	=	=	=	=	=	=	=	*/
+
+.content{
+	margin: 15px 100px 0 38px; 
+	float: none;
+}
+
+
+/*	=	=	=	SIGN UP	=	=	=	*/
+
+#signUp {
+	width: 400px;
+	margin: 15px 15px 0 15px; /*15/960 15/960*/
+	float: left;
+	clear: left;
+}
+
+#suHeading h4 {
+	width: 145px;
+	float: left;
+	clear: left;
+}
+
+#signUp label {
+	display: block;
+	padding: 8px 0 5px 0;
+}
+
+#signUp input {
+	height: 17px;
+}
+
+.bigger input {
+	width: 250px;
+}
+
+#first {
+	width: 170px;
+	float: left;
+	clear: left;
+}
+
+#pass {
+	width: 170px;
+	float: left;
+	clear: left;
+}
+
+#signUp button {
+	margin: 8px 0 0 240px;
+}
+
+/*	=	=	=	FEATURES	=	=	=	*/
+
+#features {
+	margin: 100px 0 0 0;
+	padding-bottom: 100px;
+}
+
+#features ul {
+	list-style-type: circle;
+}
+
+
+/*	=	=	=	WHY	=	=	=	*/
+#talk {
+	margin: 0 0 0 20px;
+	padding-bottom: 70px
+}
+
+#floatP {
+	width: 400px;
+	float: left;
+	clear: left;
+	margin-right: 15px;
+}
+
+
+/*	=	=	=	=	=	=	ACTUAL TASK MANAGER		=	=	=	=	=	=	*/
+
+#taskMan{
+	padding-bottom: 50px;
+}
+
+/*	=	=	=	=	ACCOUNT SETTINGS	=	=	=	=	*/
+
+#accountSettings {
+	padding-bottom: 50px;
+}
+
+#genName a {
+	text-decoration: none;
+	font-size: 2.000em;
+	color: #0b1933;
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	border-bottom: 1px solid #0b1933;
+}
+
+#genName a:hover {
+	color: #111c16;
+}
+
+.accSection label {
+	display: inline;
+	float: left;
+	clear: left;
+	width: 200px;
+	text-align: right;
+	margin-right: 5px;
+}
+
+
+.genName input {
+	width: 150px;
+}
+
+.accSection input {
+	height: 15px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+select {
+	height: 15px;
+	margin-top: 4px;
+}
+
+.accSection button {
+	margin: 10px 0 0 600px;
+}
+
+/*	=	=	=	FORGET PASSWORD	=	=	=	*/
+
+#forget {
+	margin: 20px 0 0 15px;
+	padding-bottom: 50px;
+}
+
+#forget p {
+	margin: 0 0 10px 10px
+	
+}
+
+#forget label {
+	display: inline;
+	float: left;
+	clear: left;
+	width: 100px
+	text-align: right;
+	margin-right: 5px;
+}
+
+#forget button {
+		margin: 10px 0 0 200px
+}
+

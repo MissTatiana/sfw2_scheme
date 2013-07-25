@@ -1,0 +1,159 @@
+<div>
+	
+	<script type="text/template" id="application-top">
+		<div class="top">
+			<img class="logo" src="images/shcemeLogo.png" width="125" height="124"/> <!-- 500/4 496/4 -->
+			<div class="power">
+				<a href="#"><img src="images/symbols/settings.png" id="settingsBtn"
+								 onmouseover="this.src='images/symbols/settingsDown.png'" 
+								 onmousedown="this.src='images/symbols/settingsDown.png'"
+								 onmouseout="this.src='images/symbols/settings.png'" width="62.5" height="57.5"></a> <!-- 500/8 460/8 -->
+				<a href="#"><img src="images/symbols/power.png" id="logoutPower" 
+											onmouseover="this.src='images/symbols/powerDown.png'" 
+											onmousedown="this.src='images/symbols/powerDown.png'" 
+											onmouseout="this.src='images/symbols/power.png'" width="57" height="62.9"></a> <!-- 570/10 629/10 -->
+			</div><!-- power -->
+		</div><!-- top -->
+	</script><!-- application-top -->
+	
+	<script type="text/template" id="application-template">
+		<div id="app">
+			<div class="content">
+				<div id="logout">
+					<h4>Logout?</h4>
+					
+					<div id="logoutButtons">
+						<a href="#" id="cancel"><button class="btn">Cancel</button></a>
+						
+						<a href="#"><button id="logoutBtn" class="btn">Logout</button></a>
+					</div><!-- logoutButtons -->
+				</div><!-- logout -->
+				
+				<h4 id="hello">Hello, "name"</h4>
+				
+				<div id="taskMan" width="800">
+					
+					<div id="tabs">
+						<ul>
+						<li><a href="#tabs-1">Nunc tincidunt</a></li>
+						<li><a href="#tabs-2">Proin dolor</a></li>
+						<li><a href="#tabs-3">Aenean lacinia</a></li>
+						</ul>
+						<div id="tabs-1">
+						<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+						</div>
+						<div id="tabs-2">
+						<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+						</div>
+						<div id="tabs-3">
+						<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+						<p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+						</div>
+					</div>
+											
+					
+					
+					
+					
+				</div><!-- taskMan -->
+			</div><!-- content -->
+		</div> <!-- app -->
+	</script> <!-- application-templace -->
+
+	<script type="text/template" id="account-template">
+		<div id="account">
+			<div class="content">
+				<h4>Account Settings</h4>
+				
+				<hr />
+				
+				<div id="accountSettings">
+					
+					<fieldset class="accSection">
+						<h2>Email Address</h2>
+						
+						<div>
+							<label for="accEmail">Current Email:</label>
+							<input type="email" id="accEmail" name="accEmail" />
+						</div>
+						
+						<div>
+							<label for="accNewEmail">New Email:</label>
+							<input type="email" id="accNewEmail" name="accNewEmail" />
+						</div>
+						
+						<a href="#"><button class="btn">Save</button></a>
+					</fieldset><!-- accSection -->
+					
+					<hr />
+					
+					<fieldset class="accSection">
+						<h2>Reset Password</h2>
+						
+						<div id="genName">
+							<label for="oldPass">Current Password:</label>
+							<input type="password" id="oldPass" />
+							<a href="forgot.html" target="_blank">Forgot Password?</a>
+						</div>
+						
+						<div>
+							<label for="newPass">New Password:</label>
+							<input type="password" id="newPass" name="newPass" />
+						</div>
+						
+						<div>
+							<label for="newPassConf">Confirm Password:</label>
+							<input type="password" id="newPassConf" name="newPassConf" />
+						</div>
+						
+						<a href="#"><button class="btn">Reset</button></a>
+					</fieldset><!-- accSection -->
+					
+					<hr />
+					
+					<fieldset class="accSection">
+						<h2>General Information</h2>
+						
+						<div>
+							<label for="genName">Name:</label>
+							<input type="text" class="genName" name="genName" placeholder="User's First Name" />
+							<input type="text" class="genName" name="genName" placeholder="User's Last Name" />
+						</div>
+						
+						<div>
+							<label for="genUser">Username:</label>
+							<input type="test" id="genUser" name="genUser" placeholder="User's Username" />
+						</div>
+						
+						<div>
+							<label for="genAff">Affiliation:</label>
+							<input type="text" id="genAff" name="genAff" placeholder="User's Occupation" />
+						</div>
+						
+						<div>
+							<label for="genOcc">Occupation:</label>
+							<select id="genOcc" name="genOcc">
+								<option> - Select Occupation - </option>
+								<option value="Healthcare Practioner and Technical">Healthcare Practioner and Technical</option>
+								<option value="Healthcae Support">Healthcare Supprt</option>
+								<option value="Installation, maintenance, and repair">Installation, Maintenance and repair</option>
+								<option value="Legal">Legal</option>
+								<option value="Life, physical and Social science">Life, Physical and Social Science</option>
+								<option value="Management">Manaagement</option>
+								<option value="Military Specific">Military Specific</option>
+								<option value="Off and Administrative Support">Office and Administrative Support</option>
+								<option value="Personal Care and Service">Personal Care and Service</option>
+								<option value="Product/manufactoring">Product/Manufactoring</option>
+								<option value="Protective Services">Protective Services</option>
+								<option value="Sales and Related">Sales and Related</option>
+								<option value="Student">Student</option>
+								<option value="Transportational and Moving">Transportational and Moving</option>
+							</select>
+						</div>
+						<a href="#"><button class="btn">Save Changes</button></a>
+					</fieldset> <!-- accSection -->	
+				</div><!-- accountSettings -->
+			</div><!-- content -->
+		</div><!-- account -->
+	</script><!-- account-template -->
+</div>

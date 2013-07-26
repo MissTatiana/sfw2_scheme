@@ -63,7 +63,13 @@ $(document).ready(function() {
 				$(".wrap").append(apphtml);
 				$('#hello').html('Hello, ' + user.first_name);
 				
-				$("#tabs").tabs();
+				$("#tab-container").easytabs();
+				
+				$("#taskPlus").live("click", function(e) {
+					e.preventDefault;
+					console.log("taskPlus clicked");
+					$("#addTask").toggle();
+				})
 			});
 			
 		});

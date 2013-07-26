@@ -52,7 +52,7 @@ table {
  * sand - 6c5a32
  * dark sand - 4e411e
  * grey - 44403f
- * green - 11c160
+ * green - 111c16
  * blue - 0b1933 - 102440
  */
 
@@ -323,6 +323,153 @@ a {
 #taskMan{
 	padding-bottom: 50px;
 }
+
+/*	=	=	=	=	TABS	=	=	=	=	*/
+
+#tab-container {
+	background-color: rgba(69, 72, 63, .8);
+	height: 200px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#tab-container h2 {
+	color: #111c16;
+	margin: 7px 0 0 15px;
+}
+
+.etabs { 
+	margin: 5px 0 0 5px; 
+	padding: 0; 
+}
+
+.tab { 
+	display: inline-block; 
+	zoom:1; 
+	*display:inline; 
+	background: #522627; /* Old browsers */
+	background: -moz-linear-gradient(top, #522627 1%, #3a0506 83%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#522627), color-stop(83%,#3a0506)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #522627 1%,#3a0506 83%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #522627 1%,#3a0506 83%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #522627 1%,#3a0506 83%); /* IE10+ */
+	background: linear-gradient(to bottom, #522627 1%,#3a0506 83%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#522627', endColorstr='#3a0506',GradientType=0 ); /* IE6-9 */
+	border: solid 1px #000; 
+	border-bottom: none; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;tf 
+}
+
+.tab a { 
+	color: #000;
+	font-size: 18px; 
+	line-height: 2em; 
+	display: block; 
+	padding: 0 10px; 
+	outline: none; 
+}
+
+.tab a:hover { 
+	text-decoration: underline; 
+}
+
+.tab.active { 
+	background: #2a1319;
+	background: -moz-linear-gradient(top, #3f1718 0%, #2a1319 0%, #2b1010 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f1718), color-stop(0%,#2a1319), color-stop(100%,#2b1010)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3f1718 0%,#2a1319 0%,#2b1010 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3f1718 0%,#2a1319 0%,#2b1010 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3f1718 0%,#2a1319 0%,#2b1010 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3f1718 0%,#2a1319 0%,#2b1010 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f1718', endColorstr='#2b1010',GradientType=0 ); /* IE6-9 */
+	padding-top: 6px; 
+	position: relative; 
+	top: 1px; 
+	border-color: #666; 
+}
+.tab a.active { 
+	font-weight: bold; 
+	color: #8e8e8e;
+}
+
+.tab-container .panel-container { 
+	background: #fff; 
+	border: solid #666 1px; 
+	padding: 10px; 
+	-moz-border-radius: 0 4px 4px 4px; 
+	-webkit-border-radius: 0 4px 4px 4px; 
+}
+
+.tabTops h2 {
+	float: left;
+	clear: left;
+}
+
+.plus {
+	position: absolute;
+	float: right;
+	clear: right;
+	margin: 20px 0 0 600px;
+}
+
+/*	=	=	ADDING TASKS AND PROJECT	=	=	*/
+
+#addTask {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 280px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#addTask h2 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#newTask {
+	margin: 15px 0 0 10px;
+}
+
+#newTask label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#newTask input {
+	margin: 5px 0 0 0;
+}
+
+#newTask textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+}
+
+#newTask select {
+	margin: 5px 0 0 0;
+}
+
+#newTask button {
+	margin: 10px 0 0 300px;
+}
+
+#newTask .btn {
+	font-size: 1.800em;
+}
+
 
 /*	=	=	=	=	ACCOUNT SETTINGS	=	=	=	=	*/
 

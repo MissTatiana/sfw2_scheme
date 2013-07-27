@@ -78,20 +78,69 @@
 										</select>
 									</div>
 									
-									<a href="#"><button class="btn">Add Task</button></a>
+									<a href="#"><button class="btn" id="addTaskBtn">Add Task</button></a>
 									
 								</fieldset><!-- newTask -->
 							</div><!-- addTask -->
+							
+							<div id="taskContent">
+								<div class="taskItem">
+									<h2>Task Name</h2>
+									<p>Description</p>
+									<p>Date</p>
+									<p>Priority</p>
+									<div id="taskTools">
+										<img id="cog" src="images/symbols/cog.png" width="30" height="30" />
+										<img id="trash" src="images/symbols/trash.png" width="21.8" height="33.3" /> <!-- 328/11 500/15 -->
+									</div><!-- taskTools -->
+								</div><!-- taskItem -->
+							</div><!-- taskContent -->
+							
 						</div><!-- tasks -->
 						
 						<div id="projects">
 							<div class="tabTops">
 								<h2>Your Projects</h2>
-								<a href="#" id="taskAdd"><img src="images/symbols/plus.png" class="plus" 
+								<a href="#" id="projectAdd"><img src="images/symbols/plus.png" class="plus" id="projectPlus"
 															  onmouseover="this.src='images/symbols/plusDown.png'" 
 															  onmousedown="this.src='images/symbols/plusDown.png'"
 										 					  onmouseout="this.src='images/symbols/plus.png'" width="25" height="25" /></a>
 							</div><!-- tabTops -->
+							
+							<div id="addProject">
+								<h2>Add a New Project</h2>
+								
+								<fieldset id="newProject">
+									
+									<div>
+										<label for="projectTitle">Project Title:</label>
+										<input type="text" id="projectTitle"  name="projectTitle" />
+									</div>
+									
+									<div>
+										<label for="projectDesc">Description:</label>
+										<textarea type="text" id="projectDesc" name="projectDesc"></textarea>
+									</div>
+									
+									<div>
+										<label for="projectDue">Due Date:</label>
+										<input type="date" id="projectDue" name="projectDue" />
+									</div>
+									
+									<div>
+										<label for="projectPriority">Priority:</label>
+										<select id="projectPriority">
+											<option>High</option>
+											<option>Medium</option>
+											<option>Low</option>
+										</select>
+									</div>
+									
+									<a href="#"><button class="btn" id="addProjectBtn">Add Task</button></a>
+									
+								</fieldset><!-- newProject -->
+							</div><!-- addProject -->
+							
 						</div><!-- projects -->
 						
 						<div id="calendar">

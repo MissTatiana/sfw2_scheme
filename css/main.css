@@ -178,6 +178,7 @@ a {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
 	margin-left: 325px;
 	text-align: center;
 }
@@ -222,6 +223,7 @@ a {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
 	margin-left: 250px;
 	text-align: center;
 }
@@ -251,7 +253,7 @@ a {
 /*	=	=	=	SIGN UP	=	=	=	*/
 
 #signUp {
-	width: 400px;
+	width: 500px;
 	margin: 15px 15px 0 15px; /*15/960 15/960*/
 	float: left;
 	clear: left;
@@ -270,26 +272,40 @@ a {
 
 #signUp input {
 	height: 17px;
-}
-
-.bigger input {
 	width: 250px;
 }
 
+#first input {
+	width: 155px;
+}
+
+#last input {
+	width: 155px;
+}
+
+
 #first {
-	width: 170px;
+	width: 175px;
 	float: left;
 	clear: left;
 }
 
 #pass {
-	width: 170px;
+	width: 175px;
 	float: left;
 	clear: left;
 }
 
+#pass input {
+	width: 155px;
+}
+
+#conf input {
+	width: 155px;
+}
+
 #signUp button {
-	margin: 8px 0 0 240px;
+	margin: 10px 0 0 255px;
 }
 
 /*	=	=	=	FEATURES	=	=	=	*/
@@ -328,7 +344,8 @@ a {
 
 #tab-container {
 	background-color: rgba(69, 72, 63, .8);
-	height: 200px;
+	height: 600px;
+	width: 850px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
@@ -412,10 +429,10 @@ a {
 	position: absolute;
 	float: right;
 	clear: right;
-	margin: 20px 0 0 600px;
+	margin: 20px 0 0 625px;
 }
 
-/*	=	=	ADDING TASKS AND PROJECT	=	=	*/
+/*	=	=	ADDING TASKS	=	=	*/
 
 #addTask {
 	background: #44403f;
@@ -467,6 +484,87 @@ a {
 }
 
 #newTask .btn {
+	font-size: 1.800em;
+}
+
+/*	= TASK CONTENT	=	*/
+
+#taskContent {
+	margin-top: 50px;
+	position: absolute;
+	width: 
+}
+
+.taskItem {
+	height: 100px;
+	width: 700px;
+	margin-left: 50px;
+	background: #3d3f38; /* Old browsers */
+	background: -moz-linear-gradient(top, #3d3f38 0%, #292b25 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d3f38), color-stop(100%,#292b25)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3d3f38 0%,#292b25 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3f38', endColorstr='#292b25',GradientType=0 ); /* IE6-9 */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+
+/*	=	=	ADDING PROJECTS 	=	=	*/
+
+#addProject {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 280px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#addProject h2 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#newProject {
+	margin: 15px 0 0 10px;
+}
+
+#newProject label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#newProject input {
+	margin: 5px 0 0 0;
+}
+
+#newProject textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+}
+
+#newProject select {
+	margin: 5px 0 0 0;
+}
+
+#newProject button {
+	margin: 10px 0 0 300px;
+}
+
+#newProject .btn {
 	font-size: 1.800em;
 }
 

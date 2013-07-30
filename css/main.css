@@ -78,7 +78,7 @@ hr{
 	width: 900px;
 }
 
-h4{
+h2{
 	font-size: 3.500em; /*35px*/
 	color: #522627;
 	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -92,7 +92,7 @@ h4{
    	margin: 5px 0 10px 0;
 }
 
-h2{
+h4{
 	font-size: 3.000em; /*30px*/
 	color: #111c16;
 	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -228,7 +228,7 @@ a {
 	text-align: center;
 }
 
-#logout h4 {
+#logout h2 {
 	margin-top: 50px;
 }
 
@@ -259,7 +259,7 @@ a {
 	clear: left;
 }
 
-#suHeading h4 {
+#suHeading h2 {
 	width: 145px;
 	float: left;
 	clear: left;
@@ -351,7 +351,7 @@ a {
 	border-radius: 10px;
 }
 
-#tab-container h2 {
+#tab-container h4 {
 	color: #111c16;
 	margin: 7px 0 0 15px;
 }
@@ -420,7 +420,7 @@ a {
 	-webkit-border-radius: 0 4px 4px 4px; 
 }
 
-.tabTops h2 {
+.tabTops h4 {
 	float: left;
 	clear: left;
 }
@@ -432,7 +432,7 @@ a {
 	margin: 20px 0 0 625px;
 }
 
-/*	=	=	ADDING TASKS	=	=	*/
+/*	=	=	=	=	ADDING TASKS	=	= 	=	=	*/
 
 #addTask {
 	background: #44403f;
@@ -447,7 +447,7 @@ a {
 	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
 }
 
-#addTask h2 {
+#addTask h4 {
 	color: #522627;
 	font-size: 2.200em;
 }
@@ -487,10 +487,108 @@ a {
 	font-size: 1.800em;
 }
 
-/*	= TASK CONTENT	=	*/
+/*	=	=	=	=	DELETE TASK	=	=	=	=	*/
+
+.deleteItem {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 125px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+	text-align: center;
+}
+
+.deleteItem h4 {
+	font-size: 2.200em;
+}
+
+.deleteItemBtns {
+	margin: 20px 0 0 125px;
+}
+
+#cancelDeleteTask {
+	float: left;
+	clear: left;
+	margin-right: 20px;
+}
+
+#deleteTaskBtn {
+	margin-top: 5px;
+}
+
+/*	=	=	DELETE PROJECT FLOATS	=	=	*/
+
+#cancelDeleteProject {
+	float: left;
+	clear: left;
+	margin-right: 20px;
+}
+
+/*	=	=	=	=	EDITING TASKS	=	= 	=	=	*/
+
+#editTask {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 280px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#editTask h4 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#taskEdit {
+	margin: 15px 0 0 10px;
+}
+
+#editTask label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#editTask input {
+	margin: 5px 0 0 0;
+}
+
+#editTask textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+}
+
+#editTask select {
+	margin: 5px 0 0 0;
+}
+
+#editTask button {
+	margin: 10px 0 0 300px;
+}
+
+#editTask .btn {
+	font-size: 1.800em;
+}
+
+
+/*	= 	=	=	TASK CONTENT	=	=  	=	*/
 
 #taskContent {
-	margin-top: 50px;
+	margin-top: 60px;
 	position: absolute;
 	width: 
 }
@@ -512,8 +610,47 @@ a {
 	border-radius: 10px;
 }
 
+.taskItem h5 {
+	font-size: 2.300em;
+	color: #a4a3a3;
+	margin: 10px 0 0 15px;
+}
 
-/*	=	=	ADDING PROJECTS 	=	=	*/
+.taskItem p {
+	font-size: 1.800em;
+	color: #8b8b8b;
+	margin: 3px 0 0 30px;
+}
+
+.col1 {
+	width: 200px;
+	float: left;
+	margin: 0 250px 0 0;
+}
+
+.descpt {
+	width: 400px;
+}
+
+.col2 {
+	width: 200px;
+	float: left;
+	margin: 30px 0 0 10px;
+}
+
+#taskTools {
+	width: 32px;
+	float: right;
+	margin: 15px 8px 0 0;
+	
+}
+
+#trashTask {
+	margin: 7px 0 0 3px;
+}
+
+
+/*	=	=	=	=		ADDING PROJECTS	=	=  	=	=	*/
 
 #addProject {
 	background: #44403f;
@@ -528,7 +665,7 @@ a {
 	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
 }
 
-#addProject h2 {
+#addProject h4 {
 	color: #522627;
 	font-size: 2.200em;
 }
@@ -568,6 +705,124 @@ a {
 	font-size: 1.800em;
 }
 
+/*	=	=	=	=	EDITING PROJECTS	=	= 	=	=	*/
+
+#editProject {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 280px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#editProject h4 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#projectEdit {
+	margin: 15px 0 0 10px;
+}
+
+#projectEdit label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#projectEdit input {
+	margin: 5px 0 0 0;
+}
+
+#projectEdit textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+}
+
+#projectEdit select {
+	margin: 5px 0 0 0;
+}
+
+#projectEdit button {
+	margin: 10px 0 0 300px;
+}
+
+#projectEdit .btn {
+	font-size: 1.800em;
+}
+
+
+/*	=	=	= PROJECT CONTENT	=	=	=	*/
+
+#projectContent {
+	margin-top: 60px;
+	position: absolute;
+}
+
+.projectItem {
+	height: 100px;
+	width: 700px;
+	margin-left: 50px;
+	background: #3d3f38; /* Old browsers */
+	background: -moz-linear-gradient(top, #3d3f38 0%, #292b25 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d3f38), color-stop(100%,#292b25)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3d3f38 0%,#292b25 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3f38', endColorstr='#292b25',GradientType=0 ); /* IE6-9 */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.projectItem h5 {
+	font-size: 2.300em;
+	color: #a4a3a3;
+	margin: 10px 0 0 15px;
+}
+
+.projectItem p {
+	font-size: 1.800em;
+	color: #8b8b8b;
+	margin: 3px 0 0 30px;
+}
+
+.col1 {
+	width: 200px;
+	float: left;
+	margin: 0 250px 0 0;
+}
+
+.descpt {
+	width: 400px;
+}
+
+.col2 {
+	width: 200px;
+	float: left;
+	margin: 30px 0 0 10px;
+}
+
+#projectTools {
+	width: 32px;
+	float: right;
+	margin: 15px 8px 0 0;
+	
+}
+
+#trashProject {
+	margin: 7px 0 0 3px;
+}
 
 /*	=	=	=	=	ACCOUNT SETTINGS	=	=	=	=	*/
 

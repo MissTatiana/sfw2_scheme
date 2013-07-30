@@ -65,19 +65,105 @@ $(document).ready(function() {
 				
 				$("#tab-container").easytabs();
 				
+				//TASKS
+				
 				//Toggle add tasks
 				$("#taskPlus").live("click", function(e) {
 					e.preventDefault();
 					console.log("taskPlus clicked");
 					$("#addTask").toggle();
+					
+					//add Task button
+					$("#addTaskBtn").live("click", function(e) {
+						e.preventDefault();
+						console.log("addTask btn clicked");
+					})//addTask btn
+					
 				});//toggle add task
+				
+				//Edit existing tasks (toggle)
+				$("#cogTask").live("click", function(e) {
+					e.preventDefault();
+					console.log("cogTask clicked");
+					$("#editTask").toggle();
+					
+					//editTaskBtn
+					$("#editTaskBtn").live("click", function(s) {
+						s.preventDefault();
+						console.log("editTaskBtn clicked");
+					});//editTaskBtn
+					
+				});//edit tasks
+				
+				//Delete Task
+				$("#trashTask").live("click", function(e) {
+					e.preventDefault();
+					console.log("trashTask clicked");
+					$("#deleteTask").toggle();
+					
+					//cancel
+					$("#cancelDeleteTask").live("click", function(c) {
+						c.preventDefault();
+						console.log("cancelDeleteTask clicked");
+						$("#deleteTask").toggle();
+					});//cancel
+					
+					//actually delete
+					$("#deleteTaskBtn").live("click", function(d) {
+						d.preventDefault();
+						console.log("deleteTaskBtn clicked");
+					});//deleting
+					
+				});//Delete task
+				
+				
+				//PROJECTS
 				
 				//Toggle add project
 				$("#projectPlus").live("click", function(f) {
 					f.preventDefault();
 					console.log("projectPlus clicked");
 					$("#addProject").toggle();
+					
+					//addProjectBtn
+					$("#addProjectBtn").live("click", function(p) {
+						p.preventDefault();
+						console.log("addProjectBtn clicked")
+					});//addProjectBtn
+					
 				});//toggle add project
+				
+				//Edit existing project (toggle)
+				$("#cogProject").live("click", function(ep) {
+					ep.preventDefault();
+					console.log("cogProject clicked");
+					$("#editProject").toggle();
+					
+					$("#editProjectBtn").live("click", function(b) {
+						b.preventDefault();
+						console.log("editProjectBtn clicked");
+					});//editProjectBtn
+					
+				});//edit project toggle
+				
+				//Delete Project
+				$("#trashProject").live("click", function(d) {
+					d.preventDefault();
+					console.log("trashProject clicked");
+					$("#deleteProject").toggle();
+					
+					$("#cancelDeleteProject").live("click", function(cp) {
+						cp.preventDefault();
+						console.log("cancelDeleteProject clicked");
+						$("#deleteProject").toggle();
+					});//cancelDeleteProject
+					
+					$("#deleteProjectBtn").live("click", function(dp) {
+						dp.preventDefault();
+						console.log("deleteProjectBtn clicked");
+					});//deleteProjectBtn
+					
+				});//delete Project
 				
 			});//load app-temp
 			
@@ -110,8 +196,30 @@ $(document).ready(function() {
 					loadApp();
 				})//logo click
 				
-			})//get account
+			});//get account
 		});//get top
+		
+		//Account Settings Information 
+		$("#accEmail").val = user.email;
+		
+		$("#emailTip").tipsy();
+		
+		$("#accEmailSave").live("click", function(e) {
+			e.preventDefault();
+			console.log("accEmailSave clicked")
+			$.ajax({
+				url: "xhr/update_user.php", 
+				data: {
+					email: $("#accnewEmail").val()
+				},
+				type: "post",
+				dataType: "json",
+				success: function(response) {
+					console.log(response);
+				}//success 
+			});//ajax
+		});//accEmailSave
+		
 	}; //loadSettings
 
 	//show login after power clicked
@@ -255,6 +363,7 @@ $(document).ready(function() {
 					regEmail.css({ boxShadow : "0 0 5px 3px #b4282b" });
 
 					regUsername.css({ boxShadow : "0 0 5px 3px #b4282b" });
+					$(".tooltip").tipsy({ gravity: "w" });
 
 					regPassword.css({ boxShadow : "0 0 5px 3px #b4282b" });
 

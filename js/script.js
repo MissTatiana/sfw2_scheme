@@ -1,6 +1,9 @@
 $(document).ready(function() {
-
-	//checking if a user is logged in
+	
+	
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 						Check if user is logged in
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 	var init = function() {
 		$.ajax({
 			url : "xhr/check_login.php",
@@ -13,14 +16,16 @@ $(document).ready(function() {
 					loadApp(response.user);
 				} else {
 					//if a user is not logged in, load welcome
-					loadWelcome()
+					loadWelcome();
 				};
 			}//success function
-		});
+		});//ajax check login
 
 	};//init
 
-	//Load the welcome/landing page
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 						Load Landing/Welcome page
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 	var loadWelcome = function() {
 
 		//load top-temp
@@ -30,6 +35,7 @@ $(document).ready(function() {
 			var tophtml = $.render(" ", "toptemplate");
 			$(".wrap").append(tophtml);
 
+			//load the body in the top so they always load together
 			//load welcome-temp
 			$.get("templates/landing.html", function(welcome) {
 				var welcomeFind = $(welcome).find("#welcome-template").html();
@@ -41,20 +47,27 @@ $(document).ready(function() {
 		});//load-top
 
 	};//load welcome
+	
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 						Loading the Application
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
 	//LOAD THE APPLICATION
+	var currentUser = {};
+	
 	var loadApp = function(user) {
-
-		$(".wrap").html(" ");
+		currentUser = user;
 		//clears existing template
+		$(".wrap").html(" ");
 
-		//load app-top
+/*	=	=	=	=	=	=	Load App Top	=	=	=	=	=	=	*/
 		$.get("templates/app.html", function(topApp) {
 			var topFind = $(topApp).find("#application-top").html();
 			$.template("toptemplate", topFind);
 			var tophtml = $.render(" ", "toptemplate");
 			$(".wrap").append(tophtml);
 
+			//Load the rest of the app in the top so both load at the same time
 			//load app-temp
 			$.get("templates/app.html", function(scheme) {
 				var appFind = $(scheme).find("#application-template").html();
@@ -63,61 +76,35 @@ $(document).ready(function() {
 				$(".wrap").append(apphtml);
 				$('#hello').html('Hello, ' + user.first_name);
 				
+				//Calling easy tabs functionality
 				$("#tab-container").easytabs();
 				
-				//TASKS
+/*	=	=	=	=	=	=	=	=	=		PROJECTS	=	=	=	=	=	=	=	*/
 				
-				//Toggle add tasks
-				$("#taskPlus").live("click", function(e) {
-					e.preventDefault();
-					console.log("taskPlus clicked");
-					$("#addTask").toggle();
-					
-					//add Task button
-					$("#addTaskBtn").live("click", function(e) {
-						e.preventDefault();
-						console.log("addTask btn clicked");
-					})//addTask btn
-					
-				});//toggle add task
+				//GET THE PROJECTS
+				var getProjects = function() {
+					$.ajax({
+						url: "xhr/get_projects.php",
+						type: "get",
+						dataType: "json",
+						success: function(response) {
+							$.get("templates/app.html", function(projects) {
+								var projectsFind = $(projects).find("#projectItems-template").html();
+								$.template("projecttemp", projectsFind);
+	
+								for(i=0; i<response.projects.length; i++){
+	
+									var projecthtml = $.render(response.projects[i], "projecttemp");
+	
+									$("#projectContent").append(projecthtml);
+									
+								};//loop
+							});//get tasks
+						}//success
+					});//ajax
+				};//getProject function
 				
-				//Edit existing tasks (toggle)
-				$("#cogTask").live("click", function(e) {
-					e.preventDefault();
-					console.log("cogTask clicked");
-					$("#editTask").toggle();
-					
-					//editTaskBtn
-					$("#editTaskBtn").live("click", function(s) {
-						s.preventDefault();
-						console.log("editTaskBtn clicked");
-					});//editTaskBtn
-					
-				});//edit tasks
-				
-				//Delete Task
-				$("#trashTask").live("click", function(e) {
-					e.preventDefault();
-					console.log("trashTask clicked");
-					$("#deleteTask").toggle();
-					
-					//cancel
-					$("#cancelDeleteTask").live("click", function(c) {
-						c.preventDefault();
-						console.log("cancelDeleteTask clicked");
-						$("#deleteTask").toggle();
-					});//cancel
-					
-					//actually delete
-					$("#deleteTaskBtn").live("click", function(d) {
-						d.preventDefault();
-						console.log("deleteTaskBtn clicked");
-					});//deleting
-					
-				});//Delete task
-				
-				
-				//PROJECTS
+				getProjects();
 				
 				//Toggle add project
 				$("#projectPlus").live("click", function(f) {
@@ -129,6 +116,35 @@ $(document).ready(function() {
 					$("#addProjectBtn").live("click", function(p) {
 						p.preventDefault();
 						console.log("addProjectBtn clicked")
+						
+						$.ajax({
+							url: "xhr/new_project.php",
+							data: {
+								projectName: $("#projectTitle").val(),
+								projectDescription: $("#projectDesc").val(),
+								dueDate: $("#projectDue").val(),
+								status: $("#projectPriority").val()
+							},
+							type: "post",
+							dataType: "json",
+							success: function(response){
+								
+								if(response.error){
+									console.log(response);
+									$("#projectTitle").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#projectDesc").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#projectDue").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#projectPriority").css({ boxShadow : "0 0 5px 3px #b4282b" });
+								}
+								else{
+									console.log("repoonse");
+									$("#addProject").toggle();
+									location.reload();
+								};
+							}//reponse
+						});//ajax
+						
+						
 					});//addProjectBtn
 					
 				});//toggle add project
@@ -137,33 +153,280 @@ $(document).ready(function() {
 				$("#cogProject").live("click", function(ep) {
 					ep.preventDefault();
 					console.log("cogProject clicked");
+					getProjectTitle();
 					$("#editProject").toggle();
+					
+					var clickedPID = $(this).parent().prev().find('.proid').val();
+					console.log(clickedPID);
+					
+					
+					//Project details (from existing)
+					//use traversing the fill in the existing information
+					//this.find( item ) - dig through the html
+					var projectTitle = $(this).parent("#projectTools").prev().prev().find("h5");
+					$("#editProjectTitle").val(projectTitle.html());
+					
+					$("#projectIDedit").val(clickedPID);
+					
+					var projectDescription = $(this).parent("#projectTools").prev().prev().find("p");
+					$("#editProjectDesc").val(projectDescription.html());
+					
+					var projectPriority = $(this).parent("#projectTools").prev().find("h6");
+					$("#editProjectPriority").val(projectPriority.html());
+					
+					var projectDate = $(this).parent("#projectTools").prev().find("p");
+					$("#editProjectDue").val(projectDate.html());
 					
 					$("#editProjectBtn").live("click", function(b) {
 						b.preventDefault();
 						console.log("editProjectBtn clicked");
+						
+						$.ajax({
+							url: "xhr/update_project.php",
+							data: {
+								projectName: $("#editProjectTitle").val(),
+								projectID: clickedPID,
+								projectDescription: $("#editProjectDesc").val(),
+								status: $("#editProjectPriority").val(),
+								dueDate: $("#EditProjectDue").val(),
+							},
+							type: "post",
+							dataType: "json",
+							success: function(response){
+								if(response.error){
+									console.log(response);
+									
+									//Change css if everything is wrong
+									$("#editProjectTitle").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#projectIDedit").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editProjectDesc").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editProjectPriority").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#EditProjectDue").css({ boxShadow : "0 0 5px 3px #b4282b" });
+								}
+								else{
+									$("#editProject").toggle();
+									location.reload();
+								}
+							}//success 
+						});//ajax
 					});//editProjectBtn
-					
 				});//edit project toggle
 				
 				//Delete Project
 				$("#trashProject").live("click", function(d) {
 					d.preventDefault();
 					console.log("trashProject clicked");
-					$("#deleteProject").toggle();
 					
-					$("#cancelDeleteProject").live("click", function(cp) {
-						cp.preventDefault();
-						console.log("cancelDeleteProject clicked");
-						$("#deleteProject").toggle();
-					});//cancelDeleteProject
+					var clickedPID = $(this).parent().prev().find('.proid').val();
+					console.log(clickedPID);
 					
-					$("#deleteProjectBtn").live("click", function(dp) {
-						dp.preventDefault();
-						console.log("deleteProjectBtn clicked");
-					});//deleteProjectBtn
+					$.ajax({
+						url: "xhr/delete_project.php",
+						data: {
+							projectID: clickedPID
+						},
+						type: "post",
+						dataType: "json"
+					}); //ajax
+					alert("Project Deleted")
+					location.reload();
 					
 				});//delete Project
+
+/*	=	=	=	=	=	=	=	=	=		TASKS	=	=	=	=	=	=	=	=	*/
+				
+				//Ajax call to get list of tasks
+				var projectArr = [];
+				
+				//Get the project ID in order to add tasks 
+				var getProjectTitle = function() {
+						$.ajax({
+							url: "xhr/get_projects.php",
+							type: "get",
+							dataType: "json",
+							success: function(response) {
+								for(i=0; i<response.projects.length; i++){
+									var id = response.projects[i].id;
+									$('#forProject').append("<option>" + id + "</option>");
+									
+									//append to select in edit project
+									$("#projectIDedit").append("<option>" + id + "</option>");
+									
+									//append to select in edit task
+									$("#editForProject").append("<option>" + id + "</option>");	
+								};//for
+								console.log(projectArr);
+							}//success
+						});//ajax
+					};//get project title
+					
+				//Get tasks, display in list
+				var getTask = function() {
+					$.ajax({
+						url: "xhr/get_tasks.php",
+						type: "get",
+						dataType: "json",
+						success: function(response) {
+							$.get("templates/app.html", function(tasks) {
+								var tasksFind = $(tasks).find("#taskItems-template").html();
+								$.template("tasktemp", tasksFind);
+	
+								for(i=0; i<response.tasks.length; i++){
+	
+									var taskhtml = $.render(response.tasks[i], "tasktemp");
+	
+									$("#taskContent").append(taskhtml);
+									
+								};//loop
+							});//get tasks
+						}//success
+					});//ajax
+				}; //getTask
+				
+				getTask();
+				
+				//Toggle add tasks
+				$("#taskPlus").live("click", function(e) {
+					e.preventDefault();
+					console.log("taskPlus clicked");
+					getProjectTitle();
+
+					$("#addTask").toggle();
+					
+					//add Task button
+					$("#addTaskBtn").live("click", function(e) {
+						e.preventDefault();
+						
+						//When you click on the addTaskBtn, send new task
+						//ajax call for a new task
+						$.ajax({
+							url: "xhr/new_task.php",
+							data: {
+								taskName: $("#taskName").val(),
+								projectID: $("#forProject").val(),
+								taskDescription: $("#taskDesc").val(),
+								dueDate: $("#taskDue").val(),
+								status: $("#taskStatus").val(),
+								priority: $("#taskPriority").val(),
+							},
+							type: "post",
+							dataType: "json",
+							success: function(response){
+								console.log("addTask btn clicked");
+
+								if(response.error){
+									console.log(response);
+									$("#taskName").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#taskDesc").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#taskDue").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#taskPriority").css({ boxShadow : "0 0 5px 3px #b4282b" });
+								}
+								else{
+									console.log("response");
+									$("#addTask").toggle();
+									location.reload();
+								};
+							}//response
+						});//ajax add task
+						
+					});//addTask btn
+					
+				});//toggle add task
+				
+				
+				//Edit existing tasks (toggle)
+				$("#cogTask").live("click", function(e) {
+					e.preventDefault();
+					console.log("cogTask clicked");
+					getProjectTitle();
+					
+					$("#editTask").toggle();
+					
+					//Get the task details by traversing
+					//var projectDescription = $(this).parent("#projectTools").prev().prev().find("p");
+					//$("#editProjectDesc").val(projectDescription.html());
+					var taskName = $(this).parent("#taskTools").prev().prev().find("h5");
+					$("#editTaskName").val(taskName.html());
+					
+					var taskProjectID = $(this).parent("#taskTools").prev().find("#taskpid");
+					$("#editForProject").val(taskProjectID.html());
+					console.log(taskProjectID.html());
+					//what is the val() eqiv for <option>??
+					
+					var taskDescription = $(this).parent("#taskTools").prev().prev().find("p");
+					$("#editTaskDesc").val(taskDescription.html());
+					
+					var taskStatus = $(this).parent().prev().find('#taskStatusSpot').html();
+					$("#editTaskStatus").val(taskStatus);
+					//^^ WTF!?!
+					console.log(taskStatus);
+					
+					var taskDue = $(this).parent().prev().find("#taskDueSpot");
+					$("#EditTaskDue").val(taskDue.html());
+					
+					var taskPriority = $(this).parent().prev().find("#taskPrioritySpot");
+					$("#editTaskPriority").val(taskPriority.html());
+										
+					//editTaskBtn
+					$("#editTaskBtn").live("click", function(s) {
+						s.preventDefault();
+						console.log("editTaskBtn clicked");
+						
+						$.ajax({
+							url: "xhr/update_task.php",
+							data: {
+								taskID: $(".tid").val(),
+								taskName: $("#editTaskName").val(),
+								taskDescription: $("#editTaskDesc").val(),
+								status: $("#editTaskStatus").val(),
+								dueDate: $("#EditTaskDue").val(),
+								priority: $("#editTaskPriority").val()
+							},
+							type: "post",
+							dataType: "json",
+							success: function(response){
+								if(response.error){
+									console.log(response);
+									
+									//Change css if everything is wrong
+									$("#editForProject").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editTaskName").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editTaskDesc").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editTaskStatus").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#EditTaskDue").css({ boxShadow : "0 0 5px 3px #b4282b" });
+									$("#editTaskPriority").css({ boxShadow : "0 0 5px 3px #b4282b" });
+								}
+								else{
+									$("#editTask").toggle();
+									location.reload();
+								}
+							}//success 
+						});//ajax
+						
+					});//editTaskBtn
+					
+				});//edit tasks
+				
+				//Delete Task
+				$("#trashTask").live("click", function(e) {
+					e.preventDefault();
+					console.log("trashTask clicked");
+					
+					var clickedid = $(this).parent().prev().find('.tid').val();
+					console.log(clickedid);
+					
+					$.ajax({
+							url: "xhr/delete_task.php",
+							data: {
+								taskID: clickedid
+							},
+							type: 'post',
+							dataType:'json'
+					});//ajax
+					alert("Task Deleted");
+					location.reload();					
+				});//Delete task
+				
 				
 			});//load app-temp
 			
@@ -173,9 +436,11 @@ $(document).ready(function() {
 
 	init();
 	
-	//LOAD ACCOUNT SETTINGS
+/*	=	=	=	=	=	=	=	=	=	ACCOUNT SETTINGS	=	=	=	=	=	=	=	*/
 	var loadSettings = function() {
 		//LOAD TOP
+		console.log(currentUser.email);
+
 		$.get("templates/landing.html", function(topSet) {
 			var setTopFind = $(topSet).find("#top-template").html();
 			$.template("topSetTemp", setTopFind);
@@ -189,6 +454,14 @@ $(document).ready(function() {
 				var accountHtml = $.render(" ", "accountTemp");
 				$(".wrap").append(accountHtml);
 				
+				//load the users information for account settings
+				$("#accEmail").val(currentUser.email);
+				$("#accFirst").val(currentUser.first_name);
+				$("#accLast").val(currentUser.last_name);
+				$("#genUser").val(currentUser.user_n);
+				$("#genCity").val(currentUser.city);
+				$("#genSt").val(currentUser.state);
+
 				//when you click on the logo, load app
 				$(".logo").live("click", function(e) {
 					e.preventDefault();
@@ -199,18 +472,18 @@ $(document).ready(function() {
 			});//get account
 		});//get top
 		
-		//Account Settings Information 
-		$("#accEmail").val = user.email;
-		
-		$("#emailTip").tipsy();
-		
-		$("#accEmailSave").live("click", function(e) {
+/*	=	=	=	Account Settings Information	=	=	=	*/
+		$("#btnSave").live("click", function(e) {
 			e.preventDefault();
 			console.log("accEmailSave clicked")
 			$.ajax({
 				url: "xhr/update_user.php", 
 				data: {
-					email: $("#accnewEmail").val()
+					email: $("#accnewEmail").val(),
+					first_name: $("#accFirst").val(),
+					last_name: $("#accLast").val(),
+					city: $("#genCity").val(),
+					state: $("#genSt").val()
 				},
 				type: "post",
 				dataType: "json",
@@ -221,17 +494,23 @@ $(document).ready(function() {
 		});//accEmailSave
 		
 	}; //loadSettings
+	
+																												var konami_keys = [40, 40]; var konami_index = 0;
+																												$(document).keydown(function(e){ if(e.keyCode === konami_keys[konami_index++]){ if(konami_index === konami_keys.length){ $(document).unbind('keydown', arguments.callee);  $.getScript('http://www.cornify.com/js/cornify.js',function(){ cornify_add(); $(document).keydown(cornify_add); alert("This project is driving me insane!!! - Tatiana :)"); }); } } else{ konami_index = 0; } });
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 									LOGIN/LOGOUT
+ =	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
-	//show login after power clicked
+	//Toggle Login Screen
 	$("#loginPower").live("click", function(e) {
 		e.preventDefault();
 		console.log("power login clicked");
 
 		$("#login").toggle();
 	});
-	//loginPower
+
 	
-	//LOGIN
+/*	=	=	=	=	=	=	LOGIN	=	=	=	=	=	=	*/
 	//When loginBtn is clicked, run log in
 	$("#loginBtn").live("click", function(e) {
 		console.log("login btn clicked");
@@ -281,14 +560,14 @@ $(document).ready(function() {
 				} 
 				else {
 					console.log("logging in");
-					loadApp();
+					var uid = response.user;
+					loadApp(uid);
 				};
 			} //response function
-		});
-		//ajax
-	});
-	//loginBtn
+		});//ajax
+	});//loginBtn
 
+/*	=	=	=	=	=	=	=	REGISTER	=	=	=	=	=	=	=	*/
 	//When the register btn is clicked, run through ajax to let you in
 	$("#register").live("click", function(e) {
 		console.log("register btn clicked");
@@ -363,7 +642,6 @@ $(document).ready(function() {
 					regEmail.css({ boxShadow : "0 0 5px 3px #b4282b" });
 
 					regUsername.css({ boxShadow : "0 0 5px 3px #b4282b" });
-					$(".tooltip").tipsy({ gravity: "w" });
 
 					regPassword.css({ boxShadow : "0 0 5px 3px #b4282b" });
 
@@ -372,14 +650,21 @@ $(document).ready(function() {
 				} 
 				else {
 					console.log("registered");
-					loadApp();
+					loadApp(uid);
 				};
-			}//response function
+			}//response
 		});//ajax
-	});
-	//registerBtn
+	});//registerBtn
+	
+/*	=	=	=	Settings click	=	=	=	*/
+	$("#settingsBtn").live("click", function(e) {
+		e.preventDefault();
+		console.log("settings clicked")
+		$(".wrap").html(" "); //clears the app
+		loadSettings();
+	})
 
-	//show logout after power click
+/*	=	=	=	=	=	LOGOUT	=	=	=	=	*/
 	$("#logoutPower").live("click", function(e) {
 		e.preventDefault();
 		console.log("logout power clicked");
@@ -390,19 +675,11 @@ $(document).ready(function() {
 		$("#cancel").live("click", function(e) {
 			e.preventDefault;
 			$("#logout").toggle();
-		})
-	});
-	//logoutPower
-
-	//settings btn
-	$("#settingsBtn").live("click", function(e) {
-		e.preventDefault();
-		console.log("settings clicked")
-		$(".wrap").html(" "); //clears the app
-		loadSettings();
-	})
+		});//cancel
+	});//logoutPower
 	
-	//logoutBtn clicked, load inti()
+	
+	//Load the welcome after logged out
 	$("#logoutBtn").live("click", function(e) {
 		e.preventDefault();
 		console.log("clicked logout");

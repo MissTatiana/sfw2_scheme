@@ -56,7 +56,9 @@ table {
  * blue - 0b1933 - 102440
  */
 
-/*	=	=	=	=	=	=	=	=	Regular Style	=	=	=	=	=	=	=	=	*/
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 							REGULAR STYLES
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
 body{
 	text-align: center;
@@ -148,7 +150,7 @@ a {
 }
 
 
-/*	=	=	=	=	DIV TOP	=	=	=	=	*/
+/*	=	=	=	=	=	=	=	=	DIV TOP	=	=	=	=	=	=	=	*/
 
 #top {
 	padding: 10px 10px 50px 10px;
@@ -168,7 +170,7 @@ a {
 	visibility: hidden;
 }
 
-/*	=	=	=	=	LOGIN	=	=	=	=	*/
+/*	=	=	=	=	=	=	LOGIN	=	=	=	=	=	=	*/
 
 #login {
 	position: absolute;
@@ -212,7 +214,7 @@ a {
 }
 
 
-/*	=	=	=	=	LOGOUT	=	=	=	=	*/
+/*	=	=	=	=	=	=	LOGOUT	=	=	=	=	=	=	*/
 
 #logout {
 	position: absolute;
@@ -242,7 +244,9 @@ a {
 	clear: left;
 }
 
-/*	=	=	=	=	=	=	=	CONTENT	=	=	=	=	=	=	=	=	*/
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 							CONTENT
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
 .content{
 	margin: 15px 100px 0 38px; 
@@ -308,7 +312,7 @@ a {
 	margin: 10px 0 0 255px;
 }
 
-/*	=	=	=	FEATURES	=	=	=	*/
+/*	=	=	=	=	=	=		FEATURES	=	=	=	=	=	=	*/
 
 #features {
 	margin: 100px 0 0 0;
@@ -320,7 +324,7 @@ a {
 }
 
 
-/*	=	=	=	WHY	=	=	=	*/
+/*	=	=	=	=	=	=	WHY	=	=	=	=	=	=	*/
 #talk {
 	margin: 0 0 0 20px;
 	padding-bottom: 70px
@@ -334,17 +338,19 @@ a {
 }
 
 
-/*	=	=	=	=	=	=	ACTUAL TASK MANAGER		=	=	=	=	=	=	*/
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 							ACTUAL TASK MANAGER
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
 #taskMan{
 	padding-bottom: 50px;
 }
 
-/*	=	=	=	=	TABS	=	=	=	=	*/
+/*	=	=	=	=	=	= 	TABS	=	=	=	=	=	=	*/
 
 #tab-container {
 	background-color: rgba(69, 72, 63, .8);
-	height: 600px;
+	height: 950px;
 	width: 850px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -432,225 +438,7 @@ a {
 	margin: 20px 0 0 625px;
 }
 
-/*	=	=	=	=	ADDING TASKS	=	= 	=	=	*/
-
-#addTask {
-	background: #44403f;
-	position: absolute;
-	display: none;
-	margin-left: 200px;
-	width: 450px;
-	height: 280px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
-}
-
-#addTask h4 {
-	color: #522627;
-	font-size: 2.200em;
-}
-
-#newTask {
-	margin: 15px 0 0 10px;
-}
-
-#newTask label {
-	font-size: 1.800em;
-	display: inline;
-	width: 100px;
-	float: left;
-	clear: left;
-	text-align: right;
-	margin: 3px 8px 0 0;
-}
-
-#newTask input {
-	margin: 5px 0 0 0;
-}
-
-#newTask textarea {
-	margin: 5px 0 0 0;
-	height: 75px;
-}
-
-#newTask select {
-	margin: 5px 0 0 0;
-}
-
-#newTask button {
-	margin: 10px 0 0 300px;
-}
-
-#newTask .btn {
-	font-size: 1.800em;
-}
-
-/*	=	=	=	=	DELETE TASK	=	=	=	=	*/
-
-.deleteItem {
-	background: #44403f;
-	position: absolute;
-	display: none;
-	margin-left: 200px;
-	width: 450px;
-	height: 125px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
-	text-align: center;
-}
-
-.deleteItem h4 {
-	font-size: 2.200em;
-}
-
-.deleteItemBtns {
-	margin: 20px 0 0 125px;
-}
-
-#cancelDeleteTask {
-	float: left;
-	clear: left;
-	margin-right: 20px;
-}
-
-#deleteTaskBtn {
-	margin-top: 5px;
-}
-
-/*	=	=	DELETE PROJECT FLOATS	=	=	*/
-
-#cancelDeleteProject {
-	float: left;
-	clear: left;
-	margin-right: 20px;
-}
-
-/*	=	=	=	=	EDITING TASKS	=	= 	=	=	*/
-
-#editTask {
-	background: #44403f;
-	position: absolute;
-	display: none;
-	margin-left: 200px;
-	width: 450px;
-	height: 280px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
-}
-
-#editTask h4 {
-	color: #522627;
-	font-size: 2.200em;
-}
-
-#taskEdit {
-	margin: 15px 0 0 10px;
-}
-
-#editTask label {
-	font-size: 1.800em;
-	display: inline;
-	width: 100px;
-	float: left;
-	clear: left;
-	text-align: right;
-	margin: 3px 8px 0 0;
-}
-
-#editTask input {
-	margin: 5px 0 0 0;
-}
-
-#editTask textarea {
-	margin: 5px 0 0 0;
-	height: 75px;
-}
-
-#editTask select {
-	margin: 5px 0 0 0;
-}
-
-#editTask button {
-	margin: 10px 0 0 300px;
-}
-
-#editTask .btn {
-	font-size: 1.800em;
-}
-
-
-/*	= 	=	=	TASK CONTENT	=	=  	=	*/
-
-#taskContent {
-	margin-top: 60px;
-	position: absolute;
-	width: 
-}
-
-.taskItem {
-	height: 100px;
-	width: 700px;
-	margin-left: 50px;
-	background: #3d3f38; /* Old browsers */
-	background: -moz-linear-gradient(top, #3d3f38 0%, #292b25 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d3f38), color-stop(100%,#292b25)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #3d3f38 0%,#292b25 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3f38', endColorstr='#292b25',GradientType=0 ); /* IE6-9 */
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-.taskItem h5 {
-	font-size: 2.300em;
-	color: #a4a3a3;
-	margin: 10px 0 0 15px;
-}
-
-.taskItem p {
-	font-size: 1.800em;
-	color: #8b8b8b;
-	margin: 3px 0 0 30px;
-}
-
-.col1 {
-	width: 200px;
-	float: left;
-	margin: 0 250px 0 0;
-}
-
-.descpt {
-	width: 400px;
-}
-
-.col2 {
-	width: 200px;
-	float: left;
-	margin: 30px 0 0 10px;
-}
-
-#taskTools {
-	width: 32px;
-	float: right;
-	margin: 15px 8px 0 0;
-	
-}
-
-#trashTask {
-	margin: 7px 0 0 3px;
-}
-
-
-/*	=	=	=	=		ADDING PROJECTS	=	=  	=	=	*/
+/*	=	=	=	=	=	= ADDING PROJECTS	=	=	=	=	=	=	*/
 
 #addProject {
 	background: #44403f;
@@ -705,7 +493,7 @@ a {
 	font-size: 1.800em;
 }
 
-/*	=	=	=	=	EDITING PROJECTS	=	= 	=	=	*/
+/*	=	=	=	=	=	=	EDITING PROJECTS	=	=	=	= 	=	=	*/
 
 #editProject {
 	background: #44403f;
@@ -743,6 +531,25 @@ a {
 	margin: 5px 0 0 0;
 }
 
+#projectIDedit {
+	width: 25px;
+}
+
+#pid p {
+	font-size: 1.800em;
+	display: inline;
+	width: 75px;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#pn {
+	width: 275px;
+	float: left;
+	clear: left;
+	margin-right: 5px;
+}
+
 #projectEdit textarea {
 	margin: 5px 0 0 0;
 	height: 75px;
@@ -761,7 +568,7 @@ a {
 }
 
 
-/*	=	=	= PROJECT CONTENT	=	=	=	*/
+/*	=	=	=	=	=	= PROJECT CONTENT	=	=	=	=	=	=	*/
 
 #projectContent {
 	margin-top: 60px;
@@ -789,6 +596,12 @@ a {
 	font-size: 2.300em;
 	color: #a4a3a3;
 	margin: 10px 0 0 15px;
+	width: 300px;
+}
+
+.projectItem h6 {
+	font-size: 2.000em;
+	color: #8b8b8b;
 }
 
 .projectItem p {
@@ -813,6 +626,10 @@ a {
 	margin: 30px 0 0 10px;
 }
 
+.col2 h6 {
+	margin-left: 30px;
+}
+
 #projectTools {
 	width: 32px;
 	float: right;
@@ -824,7 +641,254 @@ a {
 	margin: 7px 0 0 3px;
 }
 
-/*	=	=	=	=	ACCOUNT SETTINGS	=	=	=	=	*/
+/*	=	=	=	=	=	=	ADDING TASKS	=	=	=	= 	=	=	*/
+
+#addTask {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 165px;
+	width: 550px;
+	height: 300px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#addTask h4 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#newTask {
+	margin: 15px 0 0 10px;
+}
+
+#newTask label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+.fp p {
+	font-size: 1.800em;
+	display: inline;
+	width: 75px;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+.tn {
+	width: 275px;
+	float: left;
+	clear: left;
+	margin-right: 5px;
+}
+
+#desc {
+	margin: 5px 0 0 0;
+}
+
+#newTask input {
+	margin: 5px 0 0 0;
+}
+
+#newTask textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+	width: 250px;
+}
+
+#newTask select {
+	margin: 5px 0 0 0;
+}
+
+#newTask button {
+	margin: 10px 0 0 375px;
+}
+
+#newTask .btn {
+	font-size: 1.800em;
+}
+
+/*	=	=	=	=	=	=	DELETE TASK	=	=	=	=	=	=	*/
+
+.deleteItem {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 150px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+	text-align: center;
+}
+
+.deleteItem h4 {
+	font-size: 2.200em;
+}
+
+.deleteItemBtns {
+	margin: 20px 0 0 125px;
+}
+
+#cancelDeleteTask {
+	float: left;
+	clear: left;
+	margin-right: 20px;
+}
+
+#deleteTaskBtn {
+	margin-top: 5px;
+}
+
+/*	=	=	=	=	DELETE PROJECT FLOATS	=	=	=	=	*/
+
+#cancelDeleteProject {
+	float: left;
+	clear: left;
+	margin-right: 20px;
+}
+
+/*	=	=	=	=	=	=		EDITING TASKS	=	=	=	= 	=	=	*/
+
+#editTask {
+	background: #44403f;
+	position: absolute;
+	display: none;
+	margin-left: 200px;
+	width: 450px;
+	height: 300px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#editTask h4 {
+	color: #522627;
+	font-size: 2.200em;
+}
+
+#taskEdit {
+	margin: 15px 0 0 10px;
+}
+
+#editTask label {
+	font-size: 1.800em;
+	display: inline;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	margin: 3px 8px 0 0;
+}
+
+#editTask input {
+	margin: 5px 0 0 0;
+}
+
+#editForProject {
+	width: 25px;
+}
+
+#editTask textarea {
+	margin: 5px 0 0 0;
+	height: 75px;
+}
+
+#editTask select {
+	margin: 5px 0 0 0;
+}
+
+#editTask button {
+	margin: 10px 0 0 300px;
+}
+
+#editTask .btn {
+	font-size: 1.800em;
+}
+
+
+/*	= 	=	=	=	=	=		TASK CONTENT	=	=	=	=	=  	=	*/
+
+#taskContent {
+	margin-top: 60px;
+	position: absolute;
+}
+
+.taskItem {
+	height: 100px;
+	width: 700px;
+	margin-left: 50px;
+	background: #3d3f38; /* Old browsers */
+	background: -moz-linear-gradient(top, #3d3f38 0%, #292b25 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d3f38), color-stop(100%,#292b25)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3d3f38 0%,#292b25 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3d3f38 0%,#292b25 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3f38', endColorstr='#292b25',GradientType=0 ); /* IE6-9 */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.taskItem h5 {
+	font-size: 2.000em;
+	color: #a4a3a3;
+	margin: 10px 0 0 15px;
+	width: 300px;
+}
+
+.taskItem p {
+	font-size: 1.700em;
+	color: #8b8b8b;
+	margin: 3px 0 0 30px;
+	width: 400px;
+}
+
+.col1 {
+	width: 200px;
+	float: left;
+	margin: 0 250px 0 0;
+}
+
+.descpt {
+	height: 50px;
+	overflow: hidden;
+}
+
+
+.col2 {
+	width: 200px;
+	float: left;
+	margin: 8px 0 0 10px;
+}
+
+#taskTools {
+	width: 32px;
+	float: right;
+	margin: 15px 8px 0 0;
+	
+}
+
+#trashTask {
+	margin: 7px 0 0 3px;
+}
+
+
+/*	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=
+ 							ACCOUNT SETTINGS
+=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	=	*/
 
 #accountSettings {
 	padding-bottom: 50px;
@@ -871,7 +935,7 @@ select {
 	margin: 10px 0 0 600px;
 }
 
-/*	=	=	=	FORGET PASSWORD	=	=	=	*/
+/*	=	=	=	=	=	=	FORGET PASSWORD	=	=	=	=	=	=	*/
 
 #forget {
 	margin: 20px 0 0 15px;
